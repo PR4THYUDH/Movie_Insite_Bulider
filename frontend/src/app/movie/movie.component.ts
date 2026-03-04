@@ -28,7 +28,7 @@ export class MovieComponent {
     this.movieService.getMovie(this.movieId)
     .subscribe({
 
-      next: (data) => {
+      next: (data: any) => {
         this.movie = data
         this.loading = false
       },

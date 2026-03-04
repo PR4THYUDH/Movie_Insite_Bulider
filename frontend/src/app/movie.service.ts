@@ -10,7 +10,7 @@ export class MovieService {
   constructor(private http: HttpClient) {}
 
   getMovie(id: string) {
-    return this.http.get<Movie>("http://localhost:5000/movie/" + id)
+    return this.http.get<any>(`http://13.63.45.48:5000/movie/${id}`);
   }
 
 }
