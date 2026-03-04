@@ -1,0 +1,117 @@
+<div class="container mt-5">
+
+  <!-- Spinner -->
+  <div *ngIf="loading" class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status" style="width:3rem;height:3rem;"></div>
+    <p class="mt-3 fw-semibold">Fetching movie insight...</p>
+  </div>
+
+  <!-- Title -->
+  <h2 class="text-center mb-4">AI Movie Insight</h2>
+
+  <!-- Search Input -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="input-group mb-3">
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="movieId"
+          placeholder="Enter IMDb ID (ex: tt3896198)"
+          (keyup.enter)="searchMovie()"
+        >
+
+        <button
+          class="btn btn-primary"
+          (click)="searchMovie()"
+          [disabled]="loading"
+        >
+          Search
+        </button>
+
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage && !loading" class="alert alert-danger text-center shadow-sm">
+        <strong>Error:</strong> {{errorMessage}}
+
+        <div class="mt-2">
+          <button class="btn btn-sm btn-outline-danger" (click)="errorMessage=''">
+            Clear
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Movie Card -->
+  <div *ngIf="movie && !loading && !errorMessage" class="card shadow mt-4">
+
+    <div class="row g-0">
+
+      <!-- Poster -->
+      <div class="col-md-4 text-center p-3">
+        <img
+          [src]="movie.poster"
+          class="img-fluid rounded"
+          alt="Movie Poster"
+        >
+      </div>
+
+      <!-- Movie Details -->
+      <div class="col-md-8">
+
+        <div class="card-body">
+
+          <h3 class="card-title">{{movie.title}}</h3>
+
+          <p><b>Year:</b> {{movie.year}}</p>
+          <p><b>Actors:</b> {{movie.actors}}</p>
+          <p><b>Rating:</b> {{movie.rating}}</p>
+
+          <p class="mt-3">
+            <b>Plot:</b> {{movie.plot}}
+          </p>
+
+          <hr>
+
+          <!-- Sentiment -->
+          <h5>Audience Sentiment</h5>
+
+          <span
+            class="badge bg-success"
+            *ngIf="movie.sentiment == 'Positive'"
+          >
+            Positive
+          </span>
+
+          <span
+            class="badge bg-warning text-dark"
+            *ngIf="movie.sentiment == 'Mixed'"
+          >
+            Mixed
+          </span>
+
+          <span
+            class="badge bg-danger"
+            *ngIf="movie.sentiment == 'Negative'"
+          >
+            Negative
+          </span>
+
+          <p class="mt-2">
+            {{movie.sentimentSummary}}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
