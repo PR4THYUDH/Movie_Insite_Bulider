@@ -64,7 +64,7 @@ AI-Movie-Insight-Builder
 ## ▶️ Running the Project Locally
 
 ### 1️⃣ Clone the repository
-git clone https://github.com/YOUR\_USERNAME/ai-movie-insight-builder.git
+git clone https://github.com/YOUR\PR4THYUDH/ai-movie-insight-builder.git
 ---
 
 ### 2️⃣ Start Backend
