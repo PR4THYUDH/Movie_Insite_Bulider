@@ -1,4 +1,4 @@
-# 🎬 AI Movie Insight Builder
+# 🎬 Movie Insight Builder
 
 A full-stack web application that allows users to search for movies using an IMDb ID and view detailed movie information along with audience sentiment analysis.
 
@@ -103,6 +103,10 @@ The application will display:
 - Audience sentiment
 
 ---
+
+## ⭐ Live Link
+
+- http://13.63.45.48/
 
 ## ⭐ Future Improvements
 
