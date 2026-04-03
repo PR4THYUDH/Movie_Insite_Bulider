@@ -118,7 +118,7 @@ The application will display:
 **Prathyudh Prem**
 
 GitHub:  
-https://github.com/YOUR_USERNAME
+https://github.com/PR4THYUDH
 
 ---
 
